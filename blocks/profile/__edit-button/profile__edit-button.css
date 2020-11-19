@@ -1,0 +1,7 @@
+.profile__edit-button{
+    justify-self: start;
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    background-color: black;
+}

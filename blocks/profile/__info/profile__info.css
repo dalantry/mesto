@@ -1,0 +1,8 @@
+.profile__info{
+    margin-top: 26px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 87% 13%;
+    grid-template-rows: repeat(2, 1fr);
+    color: #ffffff;
+}
