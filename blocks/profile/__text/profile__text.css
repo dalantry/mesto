@@ -8,3 +8,10 @@
   font-size: 14px;
   line-height: 17px;
 }
+
+@media screen and (min-width: 900px){
+  .profile__text{
+      text-align: left;
+      padding-left: 30px;
+  }
+}

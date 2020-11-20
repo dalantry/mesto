@@ -1,7 +1,9 @@
 .profile__edit-button{
-    justify-self: start;
-    padding: 0;
+    margin-left: 10px;
     width: 18px;
     height: 18px;
     background-color: black;
+    background-image: url(../../../images/Edit__Button.svg);
+    border: none;
+    cursor: pointer;
 }

@@ -7,13 +7,13 @@
     column-gap: 17px;
 }
 
-@media screen and (min-width: calc(564px)) {
+@media screen and (min-width: 564px) {
     .cards__elements{
     grid-template-columns: repeat(2, 282px);
     }
 }
 
-@media screen and (min-width: calc(846px)) {
+@media screen and (min-width: 900px) {
     .cards__elements{
     grid-template-columns: repeat(3, 282px);
     }

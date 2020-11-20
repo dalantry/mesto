@@ -1,0 +1,16 @@
+.popup__save-button {
+  align-self: center;
+  min-width: 238px;
+  min-height: 46px;
+  background-color: black;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 2px;
+}
