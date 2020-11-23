@@ -6,10 +6,16 @@
     margin-top: 42px;
 }
 
-@media screen and (min-width: 900px){
+@media screen and (min-width: 940px){
     .profile{
         display: grid;
         grid-template-columns: 120px 336px 424px;
         max-width: 880px;
+    }
+}
+
+@media screen and (min-width: 564px){
+    .profile{
+        margin: 26px auto;
     }
 }

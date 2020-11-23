@@ -1,11 +1,13 @@
 .popup__container{
-    margin: 0;
+    min-width: 282px;
     display: flex;
     flex-direction: column;
-    min-width: 282px;
-    position: absolute;
-    left: 28px;
-    top: 123px;
+    margin: 0;
 }
 
+@media screen and (min-width: 564px) {
+    .popup__container{
+        min-width: 430px;
+    }
+}
 
