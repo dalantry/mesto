@@ -3,8 +3,6 @@ let popup = document.querySelector(".popup");
 let editButton = document.querySelector(".profile__edit-button");
 let popupClose = document.querySelector(".popup__close");
 
-
-
 function openForm(){
     popup.classList.add('popup_opened');
 }

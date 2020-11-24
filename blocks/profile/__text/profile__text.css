@@ -9,9 +9,11 @@
   line-height: 17px;
 }
 
-@media screen and (min-width: 900px){
-  .profile__text{
-      text-align: left;
-      padding-left: 30px;
+@media screen and (min-width: 900px) {
+  .profile__text {
+    text-align: left;
+    padding-left: 30px;
+    font-size: 18px;
+    line-height: 22px;
   }
 }
