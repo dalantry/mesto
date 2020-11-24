@@ -9,9 +9,11 @@
   max-width: 336px;
 }
 
-@media screen and (min-width: 900px){
-  .profile__title{
-      text-align: left;
-      padding-left: 30px;
+@media screen and (min-width: 900px) {
+  .profile__title {
+    text-align: left;
+    padding-left: 30px;
+    font-size: 42px;
+    line-height: 48px;
   }
 }
