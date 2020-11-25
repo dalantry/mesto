@@ -4,7 +4,15 @@
     background-color: black;
     background-image: url(../../../images/Edit__Button.svg);
     background-repeat: no-repeat;
+    background-size: cover;
     border: none;
     cursor: pointer;
     align-self: center;
+}
+
+@media screen and (min-width: 900px){
+    .profile__edit-button{
+        min-width: 24px;
+        min-height: 24px;
+    }
 }

@@ -2,11 +2,17 @@
     min-width: 238px;
     min-height: 27px;
     border: 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     align-self: center;
     margin-bottom: 30px;
 }
 
-.popup__input :last-child{
+.popup__input:last-child{
     margin-bottom: 45px;
+}
+
+@media screen and (min-width: 900px){
+    .popup__input{
+        min-width: 358px;
+    }
 }

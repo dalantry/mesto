@@ -14,3 +14,12 @@
   cursor: pointer;
   border-radius: 2px;
 }
+
+@media screen and (min-width: 900px) {
+  .popup__save-button {
+    min-width: 358px;
+    font-size: 18px;
+    line-height: 22px;
+    margin: 15px 36px 37px 36px;
+  }
+}

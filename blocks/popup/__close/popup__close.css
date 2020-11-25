@@ -1,11 +1,21 @@
 .popup__close{
     background-image: url(../../../images/Close__Icon.svg);
-    width: 26px;
-    height: 26px;
-    background-color: rgba(0, 0, 0, 1);
+    min-width: 26px;
+    min-height: 26px;
+    background-color: rgba(0, 0, 0, 0);
     border: none;
+    background-size: 150%;
     background-position: center;
     align-self: flex-end;
-    margin: 0;
+    margin-bottom: 14px;
+    padding: 0;
     cursor: pointer;
+}
+
+@media screen and (min-width: 900px){
+    .popup__close{
+        min-width: 40px;
+        min-height: 40px;
+        margin-right: -15px;
+    }
 }
