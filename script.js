@@ -19,8 +19,8 @@ popupClose.addEventListener("click", closeForm);
 
 // Текст формы
 let formElement = document.querySelector(".popup__main");
-let nameInput = formElement.querySelector(".popup__text-name");
-let jobInput = formElement.querySelector(".popup__text-job");
+let nameInput = formElement.querySelector(".popup__input_text_name");
+let jobInput = formElement.querySelector(".popup__input_text_job");
 
 nameInput.value = document.querySelector(".profile__title").textContent;
 jobInput.value = document.querySelector(".profile__text").textContent;
