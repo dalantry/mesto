@@ -1,14 +1,15 @@
-// Открытие и закрытие попап
-let popup = document.querySelector(".popup");
+
+let popupEdit = document.querySelector(".popup__edit-form");
 let editButton = document.querySelector(".profile__edit-button");
 let popupClose = document.querySelector(".popup__close");
 
+// Открытие и закрытие попап редактировнаия
 function openForm() {
-  popup.classList.add("popup_opened");
+  popupEdit.classList.add("popup_opened");
 }
 
 function closeForm() {
-  popup.classList.remove("popup_opened");
+  popupEdit.classList.remove("popup_opened");
   nameInput.value = document.querySelector(".profile__title").textContent;
   jobInput.value = document.querySelector(".profile__text").textContent;
 }
