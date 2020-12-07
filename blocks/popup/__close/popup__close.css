@@ -9,6 +9,7 @@
     align-self: flex-end;
     margin-bottom: 14px;
     padding: 0;
+    margin-right: -15px;
     cursor: pointer;
 }
 
