@@ -104,6 +104,10 @@ function newCard(item){
   const removeButton = newItem.querySelector('.cards__delete');
   removeButton.addEventListener('click', removeCard);
 
+  //попап картинки
+  const imgFull = newItem.querySelector('.cards__image');
+  imgFull.addEventListener('click', fullImage);
+
   return newItem;
 }
 
@@ -134,4 +138,15 @@ function removeCard (event){
   const targetElement = event.target;
   const targetItem = targetElement.closest('.cards__element');
   targetItem.remove();
+}
+ // попап картинки
+ const popupImgLink = document.querySelector('.popup-img__image');
+ const popupImg = document.querySelector('.popup-img');
+
+function fullImage (evt){
+  const targetImage = evt.target;
+  const targetImageLink = targetImage.src;
+
+  popupImgLink.setAttribute('src', targetImageLink);
+  popupImg.classList.add('popup_opened');
 }
