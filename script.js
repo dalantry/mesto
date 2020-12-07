@@ -36,7 +36,7 @@ formElement.addEventListener("submit", formSubmitHandler);
 
 //Форма добавляения
 const addButton = document.querySelector('.profile__add-button');
-const popupAdd = document.querySelector('.popup__add-card');
+const popupAdd = document.querySelector('.popup-add');
 const popupCloseAdd = document.querySelector('.popup__close_add');
 
 function openFormAdd() {
@@ -45,8 +45,7 @@ function openFormAdd() {
 addButton.addEventListener("click", openFormAdd);
 popupCloseAdd.addEventListener("click", openFormAdd);
 
-
-// Карточки из коробки
+// Cards
 const initialCards = [
   {
       name: 'Москва',
