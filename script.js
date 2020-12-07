@@ -94,6 +94,16 @@ function newCard(item){
   const linkElement = newItem.querySelector('.cards__image');
   linkElement.setAttribute('src', item.link);
 
+  // like
+  const likeButton = newItem.querySelector('.cards__like-button');
+  likeButton.addEventListener('click', function(){
+  likeButton.classList.toggle('cards__like-button_active');
+  });
+
+  //remove card
+  const removeButton = newItem.querySelector('.cards__delete');
+  removeButton.addEventListener('click', removeCard);
+
   return newItem;
 }
 
@@ -102,32 +112,26 @@ function renderCards(){
 
   listContainer.append(...listCards);
 }
-
 renderCards();
 
 // добавление новых карточек
 const inputElementTitle = document.querySelector('.popup__input_text_place');
 const inputElementLink = document.querySelector('.popup__input_text_link');
 
-function addNewCard(event){
-    event.preventDefault();
+popupAdd.addEventListener('submit', function(event){
+  event.preventDefault();
 
-    const inputTitle = inputElementTitle.value;
-    const inputLink = inputElementLink.value;
-    const newItemCard = newCard({ name: inputTitle, link: inputLink});
-    listContainer.prepend(newItemCard);
+  const inputTitle = inputElementTitle.value;
+  const inputLink = inputElementLink.value;
+  const newItemCard = newCard({ name: inputTitle, link: inputLink});
+  listContainer.prepend(newItemCard);
 
-    closeFormAdd();
-  }
+  closeFormAdd();
+});
 
-popupAdd.addEventListener('submit', addNewCard);
-
-//кнопка лайк
-
-const likeButton = document.querySelector('.cards__like-button');
-
-function like(){
-  likeButton.classList.toggle('cards__like-button_active');
-};
-
-likeButton.addEventListener('click', like);
+//удаление карточек
+function removeCard (event){
+  const targetElement = event.target;
+  const targetItem = targetElement.closest('.cards__element');
+  targetItem.remove();
+}
