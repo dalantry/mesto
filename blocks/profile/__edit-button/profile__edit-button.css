@@ -4,7 +4,7 @@
     background-color: black;
     background-image: url(../../../images/Edit__Button.svg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     border: none;
     cursor: pointer;
     align-self: center;

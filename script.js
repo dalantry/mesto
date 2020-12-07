@@ -1,9 +1,8 @@
-
+// Открытие и закрытие попап редактировнаия
 const popup = document.querySelector(".popup");
 const editButton = document.querySelector(".profile__edit-button");
 const popupClose = document.querySelector(".popup__close");
 
-// Открытие и закрытие попап редактировнаия
 function openForm() {
   popup.classList.toggle("popup_opened");
   nameInput.value = document.querySelector(".profile__title").textContent;
@@ -46,7 +45,8 @@ function openFormAdd() {
 addButton.addEventListener("click", openFormAdd);
 popupCloseAdd.addEventListener("click", openFormAdd);
 
-// Cards
+
+// Карточки из коробки
 const initialCards = [
   {
       name: 'Москва',
@@ -77,7 +77,6 @@ const initialCards = [
 const templateElement = document.querySelector('.template');
 const listContainer = document.querySelector('.cards__elements');
 
-// Карточки из коробки
 function newCard(item){
   const newItem = templateElement.content.cloneNode(true);
   const titleElement = newItem.querySelector('.cards__text');
