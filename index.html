@@ -1,112 +1,113 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Место</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./pages/index.css" />
-  <title>Место</title>
-</head>
-
-<body>
-  <main class="page">
-    <div class="popup popup__edit-form">
-      <div class="popup__container">
-        <button class="button popup__close" type="button"></button>
-        <form name="popup__form" class="popup__main">
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <input class="popup__input popup__input_text_name" type="text" name="name" />
-          <input class="popup__input popup__input_text_job" type="text" name="job" />
-          <input type="submit" value="Сохранить" class="button popup__save-button" />
-        </form>
-      </div>
-    </div>
-
-    <div class="popup popup__add-card">
-      <div class="popup__container">
-        <button class="button popup__close popup__close_add" type="button"></button>
-        <form name="popup__form" class="popup__main">
-          <h2 class="popup__title">Новое место</h2>
-          <input class="popup__input popup__input_text_place" type="text" name="place" value="Наименование" />
-          <input class="popup__input popup__input_text_link" type="text" name="link" />
-          <input type="submit" value="Сохранить" class="button popup__save-button" />
-        </form>
-      </div>
-    </div>
-
-
-    <header class="header">
-      <img src="./images/logo.png" alt="Надпись 'Место'" class="header__logo" />
-    </header>
-    <div class="content">
-      <section class="profile">
-        <img src="./images/Avatar.png" alt="Фото Жак-Ив Кусто" class="profile__avatar" />
-        <div class="profile__info">
-          <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="button profile__edit-button" type="button"></button>
-          <p class="profile__text">Исследователь моря</p>
+  <body>
+    <main class="page">
+      <div class="popup popup__edit-form">
+        <div class="popup__container">
+          <button class="button popup__close" type="button"></button>
+          <form name="popup__form" class="popup__main">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <input
+              class="popup__input popup__input_text_name"
+              type="text"
+              name="name"
+            />
+            <input
+              class="popup__input popup__input_text_job"
+              type="text"
+              name="job"
+            />
+            <input
+              type="submit"
+              value="Сохранить"
+              class="button popup__save-button"
+            />
+          </form>
         </div>
-        <button class="button profile__add-button" type="button"></button>
-      </section>
-      <section class="cards">
-        <div class="cards__elements">
-          <div class="cards__element">
-            <button class="button cards__delete"></button>
-            <img src="./images/dombai.jpg" alt="Домбаи" class="cards__image" />
-            <div class="cards__capture">
-              <p class="cards__text">Домбаи</p>
-              <button class="button cards__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="cards__element">
-            <button class="button cards__delete"></button>
-            <img src="./images/elbrus_2.jpg" alt="Эльбрус" class="cards__image" />
-            <div class="cards__capture">
-              <p class="cards__text">Эльбрус</p>
-              <button class="button cards__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="cards__element">
-            <button class="button cards__delete"></button>
-            <img src="./images/karachaevojpg.jpg" alt="Карачаево" class="cards__image" />
-            <div class="cards__capture">
-              <p class="cards__text">Карачаево</p>
-              <button class="button cards__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="cards__element">
-            <button class="button cards__delete"></button>
-            <img src="./images/dombai.jpg" alt="Домбаи" class="cards__image" />
-            <div class="cards__capture">
-              <p class="cards__text">Домбаи</p>
-              <button class="button cards__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="cards__element">
-            <button class="button cards__delete"></button>
-            <img src="./images/elbrus_2.jpg" alt="Эльбрус" class="cards__image" />
-            <div class="cards__capture">
-              <p class="cards__text">Эльбрус</p>
-              <button class="button cards__like-button" type="button"></button>
-            </div>
-          </div>
-          <div class="cards__element">
-            <button class="button cards__delete"></button>
-            <img src="./images/karachaevojpg.jpg" alt="Карачаево" class="cards__image" />
-            <div class="cards__capture">
-              <p class="cards__text">Карачаево-Черкесово</p>
-              <button class="button cards__like-button" type="button"></button>
-            </div>
-          </div>
+      </div>
+
+      <div class="popup popup__add-card">
+        <div class="popup__container">
+          <button
+            class="button popup__close popup__close_add"
+            type="button"
+          ></button>
+          <form name="popup__form" class="popup__main">
+            <h2 class="popup__title">Новое место</h2>
+            <input
+              class="popup__input popup__input_text_place"
+              type="text"
+              name="place"
+              placeholder="Название"
+            />
+            <input
+              class="popup__input popup__input_text_link"
+              type="url"
+              name="link"
+              placeholder="Ссылка на картинку"
+            />
+            <input
+              type="submit"
+              value="Сохранить"
+              class="button popup__save-button"
+            />
+          </form>
         </div>
-      </section>
-      <footer class="footer">
-        <div class="footer__copyright">&copy; 2020 Mesto Russia</div>
-      </footer>
-    </div>
-  </main>
+      </div>
 
-  <script src="./script.js"></script>
-</body>
+      <header class="header">
+        <img
+          src="./images/logo.svg"
+          alt="Надпись 'Место'"
+          class="header__logo"
+        />
+      </header>
+      <div class="content">
+        <section class="profile">
+          <img
+            src="./images/Avatar.png"
+            alt="Фото Жак-Ив Кусто"
+            class="profile__avatar"
+          />
+          <div class="profile__info">
+            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <button class="button profile__edit-button" type="button"></button>
+            <p class="profile__text">Исследователь моря</p>
+          </div>
+          <button class="button profile__add-button" type="button"></button>
+        </section>
 
+        <section class="cards">
+          <div class="cards__elements">
+            <template class="template">
+              <div class="cards__element">
+                <button class="button cards__delete"></button>
+                <img src="" alt="" class="cards__image" />
+                <div class="cards__capture">
+                  <p class="cards__text"></p>
+                  <button
+                    class="button cards__like-button"
+                    type="button"
+                  ></button>
+                </div>
+              </div>
+            </template>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <div class="footer__copyright">&copy; 2020 Mesto Russia</div>
+        </footer>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
 </html>

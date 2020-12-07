@@ -28,6 +28,7 @@
 @import url(../blocks/cards/__like-button/cards__like-button.css);
 @import url(../blocks/cards/__capture/cards__capture.css);
 @import url(../blocks/cards/__delete/cards__delete.css);
+@import url(../blocks/cards/_active/cards__like-button_active.css);
 
 /* Footer */
 
