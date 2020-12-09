@@ -117,3 +117,5 @@ function fullImage (evt){
 //закрытие попапа изображения
 const closeImg = document.querySelector('.popup-img__close');
 closeImg.addEventListener("click", () => openAndCloseForm(popupImg));
+
+
