@@ -1,6 +1,7 @@
 .cards__image{
     width: 100%;
     height: 282px;
+    background-image: url(https://img2.goodfon.ru/original/2560x1600/8/de/tekstura-krugi-fon.jpg);
     object-fit: cover;
     cursor: pointer;
 }

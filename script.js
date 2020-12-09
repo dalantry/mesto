@@ -1,77 +1,46 @@
 // Открытие и закрытие попап редактировнаия
-const popup = document.querySelector(".popup");
+const popup = document.querySelector('.popup');
+const popupEditForm = document.querySelector(".popup-edit");
 const editButton = document.querySelector(".profile__edit-button");
-const popupClose = document.querySelector(".popup__close");
-
-function openForm() {
-  popup.classList.toggle("popup_opened");
-  nameInput.value = document.querySelector(".profile__title").textContent;
-  jobInput.value = document.querySelector(".profile__text").textContent;
-}
-
-editButton.addEventListener("click", openForm);
-popupClose.addEventListener("click", openForm);
-
+const popupCloseEdit = popupEditForm.querySelector(".popup__close");
 
 // Текст формы
 const formElement = document.querySelector(".popup__main");
 const nameInput = formElement.querySelector(".popup__input_text_name");
 const jobInput = formElement.querySelector(".popup__input_text_job");
-
-nameInput.value = document.querySelector(".profile__title").textContent;
-jobInput.value = document.querySelector(".profile__text").textContent;
-
-function formSubmitHandler(evt) {
-  evt.preventDefault(); 
-
-  let name = document.querySelector(".profile__title");
-  let job = document.querySelector(".profile__text");
-
-  name.textContent = nameInput.value;
-  job.textContent = jobInput.value;
-
-  openForm();
-}
-formElement.addEventListener("submit", formSubmitHandler);
+const profileTitle = document.querySelector(".profile__title");
+const profileJob = document.querySelector(".profile__text");
+let name = document.querySelector(".profile__title");
+let job = document.querySelector(".profile__text");
 
 //Форма добавляения
 const addButton = document.querySelector('.profile__add-button');
 const popupAdd = document.querySelector('.popup-add');
 const popupCloseAdd = document.querySelector('.popup__close_add');
 
-function openFormAdd() {
-  popupAdd.classList.toggle("popup_opened");
-};
-addButton.addEventListener("click", openFormAdd);
-popupCloseAdd.addEventListener("click", openFormAdd);
+function openAndCloseForm(popup) {
+  popup.classList.toggle("popup_opened"); 
+}
 
-// Cards
-const initialCards = [
-  {
-      name: 'Москва',
-      link: 'https://images.unsplash.com/photo-1533193256116-fcaf17cfb3b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-  },
-  {
-      name: 'Монрепо',
-      link: 'https://images.unsplash.com/photo-1536012354193-8bb300dc3ce6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=676&q=80'
-  },
-  {
-      name: 'Токсово',
-      link: 'https://images.unsplash.com/photo-1517940094524-be03e5da7a98?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-  },
-  {
-      name: 'Новороссийск',
-      link: 'https://images.unsplash.com/photo-1523175347343-52d8867ca0bd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
-  },
-  {
-      name: 'Холмогорский район',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-      name: 'Байкал',
-      link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-]; 
+editButton.addEventListener("click", () => openAndCloseForm(popupEditForm));
+editButton.addEventListener('click', function (){
+    nameInput.value = profileTitle.textContent;
+    jobInput.value = profileJob.textContent;
+})
+popupCloseEdit.addEventListener("click", () => openAndCloseForm(popupEditForm));
+
+function formSubmitHandler(evt) {
+  evt.preventDefault(); 
+
+  name.textContent = nameInput.value;
+  job.textContent = jobInput.value;
+
+  openAndCloseForm(popupEditForm);
+}
+formElement.addEventListener("submit", formSubmitHandler);
+
+addButton.addEventListener("click", () => openAndCloseForm(popupAdd));
+popupCloseAdd.addEventListener("click", () => openAndCloseForm(popupAdd));
 
 const templateElement = document.querySelector('.template');
 const listContainer = document.querySelector('.cards__elements');
@@ -121,7 +90,7 @@ popupAdd.addEventListener('submit', function(event){
   const newItemCard = newCard({ name: inputTitle, link: inputLink});
   listContainer.prepend(newItemCard);
 
-  openFormAdd();
+  openAndCloseForm(popupAdd);
 })
 //удаление карточек
 function removeCard (event){
@@ -142,10 +111,9 @@ function fullImage (evt){
   popupImgLink.setAttribute('src', targetImageLink);
   popupImgText.textContent = targetImageText;
 
-  popupImg.classList.add('popup_opened');
+  openAndCloseForm(popupImg);
 }
+
 //закрытие попапа изображения
 const closeImg = document.querySelector('.popup-img__close');
-closeImg.addEventListener("click", function(){
-  popupImg.classList.remove('popup_opened');
-});
+closeImg.addEventListener("click", () => openAndCloseForm(popupImg));
