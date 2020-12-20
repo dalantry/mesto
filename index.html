@@ -12,23 +12,35 @@
       <div class="popup popup-edit">
         <div class="popup__container">
           <button class="button popup__close" type="button"></button>
-          <form name="popup-edit" class="popup__main edit-form">
+          <form name="popup-edit" class="popup__main edit-form" novalidate>
+            <div class="inputs">
             <h2 class="popup__title">Редактировать профиль</h2>
             <input
               class="popup__input popup__input_text_name"
               type="text"
+              autocomplete="off"
               name="name"
+              id="name-card"
+              minlength="2" maxlength="40"
+              required
             />
+            <span id='name-card-error' class="error"></span>
             <input
               class="popup__input popup__input_text_job"
+              autocomplete="off"
               type="text"
               name="job"
+              id="job"
+              minlength="2" maxlength="200"
+              required
             />
+            <span id='job-error' class="error"></span>
             <input
               type="submit"
               value="Сохранить"
               class="button popup__save-button"
             />
+          </div>
           </form>
         </div>
       </div>
@@ -39,25 +51,38 @@
             class="button popup__close popup__close_add"
             type="button"
           ></button>
-          <form name="popup-add" class="popup__main add-form">
+          <form name="popup-add" class="popup__main add-form"
+          novalidate>
+          <div class="inputs">
             <h2 class="popup__title">Новое место</h2>
             <input
               class="popup__input popup__input_text_place"
               type="text"
+              autocomplete="off"
               name="place"
+              id='place'
               placeholder="Название"
+              required
+              minlength="2"
+              maxlength="30"
             />
+            <span id='place-error' class="error"></span>
             <input
               class="popup__input popup__input_text_link"
               type="url"
+              autocomplete="off"
               name="link"
+              id="link"
               placeholder="Ссылка на картинку"
+              required
             />
+            <span id='link-error' class="error"></span>
             <input
               type="submit"
               value="Сохранить"
               class="button popup__save-button"
             />
+          </div>
           </form>
         </div>
       </div>
@@ -121,5 +146,6 @@
     </main>
     <script src="./cardsList.js"></script>
     <script src="./script.js"></script>
+    <script src="./validate.js"></script>
   </body>
 </html>

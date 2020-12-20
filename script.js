@@ -3,14 +3,14 @@ const popupEditForm = document.querySelector(".popup-edit");
 const editButton = document.querySelector(".profile__edit-button");
 const popupCloseEdit = popupEditForm.querySelector(".popup__close");
 const popup = document.querySelector(".popup");
+
 // Текст формы
 const formProfile = document.querySelector(".edit-form");
 const nameInput = formProfile.querySelector(".popup__input_text_name");
 const jobInput = formProfile.querySelector(".popup__input_text_job");
 const profileTitle = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__text");
-const name = document.querySelector(".profile__title");
-const job = document.querySelector(".profile__text");
+
 
 //Форма добавляения
 const addButton = document.querySelector(".profile__add-button");
@@ -44,20 +44,17 @@ function overlayClickClose(popup) {
 }
 
 //----------------------------------------------------
+
+nameInput.value = profileTitle.textContent;
+jobInput.value = profileJob.textContent;
+
 editButton.addEventListener("click", () => {
   openPopup(popupEditForm);
-
-  nameInput.value = profileTitle.textContent;
-  jobInput.value = profileJob.textContent;
 });
 popupCloseEdit.addEventListener("click", () => closePopup(popupEditForm));
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
-
-  name.textContent = nameInput.value;
-  job.textContent = jobInput.value;
-
   closePopup(popupEditForm);
 }
 formProfile.addEventListener("submit", formSubmitHandler);

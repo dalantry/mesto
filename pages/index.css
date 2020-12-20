@@ -52,3 +52,6 @@
 
 
 @import url(../blocks/button/button.css);
+@import url(../blocks/error/error.css);
+@import url(../blocks/inputs/inputs.css);
+@import url(../blocks/button/_invalid/button_invalid.css);
