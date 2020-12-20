@@ -55,6 +55,9 @@ popupCloseEdit.addEventListener("click", () => closePopup(popupEditForm));
 
 function formSubmitHandler(evt) {
   evt.preventDefault();
+  profileTitle.textContent = nameInput.value;
+  profileJob.textContent = jobInput.value;
+
   closePopup(popupEditForm);
 }
 formProfile.addEventListener("submit", formSubmitHandler);
