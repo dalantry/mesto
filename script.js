@@ -25,6 +25,12 @@ function openPopup(popup) {
 function closePopup(item) {
   const parent = item.closest('.popup');
   parent.classList.remove("popup_opened");
+
+  document.removeEventListener('keydown', function (evt) {
+    if (evt.key === "Escape") {
+      closePopup(popup);
+    }
+  })
 }
 
 function overlayClickClose(popup) {
@@ -41,6 +47,7 @@ function escPopupClose(popup){
       closePopup(popup);
     }
   });
+
 }
 
 popupList.forEach((popup) =>{
