@@ -1,5 +1,6 @@
 .button{
     transition: all 1s ease 0s;
+    background-color: black;
 }
 
 .button:hover{
