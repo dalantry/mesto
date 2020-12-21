@@ -118,6 +118,7 @@ formAddNewCard.addEventListener("submit", function (event) {
   listContainer.prepend(newItemCard);
 
   closePopup(popupAdd);
+  formAddNewCard.reset();
 });
 
 function removeCard(event) {
