@@ -17,23 +17,29 @@ const popupImgText = document.querySelector(".popup-img__text");
 const inputElementTitle = document.querySelector(".popup__input_text_place");
 const inputElementLink = document.querySelector(".popup__input_text_link");
 const formAddNewCard = popupAdd.querySelector(".add-form");
+const submitButton = document.querySelector('.popup__save-button')
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+
+  document.addEventListener('keydown', closeByEscape);
 }
 
-function closePopup(item) {
-  const parent = item.closest('.popup');
-  parent.classList.remove("popup_opened");
+function closePopup() {
+  const openedPopup = document.querySelector('.popup_opened');
+  openedPopup.classList.remove("popup_opened");
 
-  document.removeEventListener('keydown', function (evt) {
-    if (evt.key === "Escape") {
-      closePopup(popup);
-    }
-  })
+  document.removeEventListener('keydown', closeByEscape);
 }
 
-function overlayClickClose(popup) {
+function closeByEscape(evt) {
+  const escapeCode = 27
+  if (evt.keyCode === escapeCode) {
+    closePopup();
+  }
+}
+
+function addOverlayClickClose(popup) {
   popup.addEventListener("click", function (evt) {
     if (evt.target.classList.contains("popup")) {
       closePopup(popup);
@@ -41,18 +47,8 @@ function overlayClickClose(popup) {
   });
 }
 
-function escPopupClose(popup){
-  document.addEventListener("keydown", function (evt) {
-    if (evt.key === "Escape") {
-      closePopup(popup);
-    }
-  });
-
-}
-
 popupList.forEach((popup) =>{
-    escPopupClose(popup);
-    overlayClickClose(popup);
+    addOverlayClickClose(popup);
   })
 
 closeButtonList.forEach((button) =>{
@@ -61,11 +57,14 @@ button.addEventListener('click', function(){
 })
 });
 
-nameInput.value = profileTitle.textContent;
-jobInput.value = profileJob.textContent;
-
 editButton.addEventListener("click", () => {
+  nameInput.value = profileTitle.textContent;
+  jobInput.value = profileJob.textContent;
+
   openPopup(popupEditForm);
+ 
+  const submitButton = document.querySelector('.popup-edit__submit'); 
+  setButtonState(submitButton, formProfile.checkValidity(), validationConfig);
 });
 
 function formSubmitHandler(evt) {
@@ -74,18 +73,22 @@ function formSubmitHandler(evt) {
   profileJob.textContent = jobInput.value;
 
   closePopup(popupEditForm);
-}
+;}
 formProfile.addEventListener("submit", formSubmitHandler);
 
-addButton.addEventListener("click", () => openPopup(popupAdd));
+addButton.addEventListener("click", function() {
+  openPopup(popupAdd);
+  
+  formAddNewCard.reset();
+});
 
-function newCard(item) {
+function createNewCard(item) {
   const newItem = templateElement.content.cloneNode(true);
   const titleElement = newItem.querySelector(".cards__text");
   titleElement.textContent = item.name;
-  const linkElement = newItem.querySelector(".cards__image");
-  linkElement.setAttribute("src", item.link);
-  linkElement.setAttribute("alt", item.name);
+  const cardImage = newItem.querySelector(".cards__image");
+  cardImage.setAttribute("src", item.link);
+  cardImage.setAttribute("alt", item.name);
 
   const likeButton = newItem.querySelector(".cards__like-button");
 
@@ -96,14 +99,13 @@ function newCard(item) {
   const removeButton = newItem.querySelector(".cards__delete");
   removeButton.addEventListener("click", removeCard);
 
-  const imgFull = newItem.querySelector(".cards__image");
-  imgFull.addEventListener("click", fullImage);
+  cardImage.addEventListener("click", fullImage);
 
   return newItem;
 }
 
 function renderCards() {
-  const listCards = initialCards.map(newCard);
+  const listCards = initialCards.map(createNewCard);
 
   listContainer.append(...listCards);
 }
@@ -114,11 +116,10 @@ formAddNewCard.addEventListener("submit", function (event) {
 
   const inputTitle = inputElementTitle.value;
   const inputLink = inputElementLink.value;
-  const newItemCard = newCard({ name: inputTitle, link: inputLink });
+  const newItemCard = createNewCard({ name: inputTitle, link: inputLink });
   listContainer.prepend(newItemCard);
 
   closePopup(popupAdd);
-  formAddNewCard.reset();
 });
 
 function removeCard(event) {
